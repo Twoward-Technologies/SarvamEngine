@@ -6,8 +6,8 @@ body {
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }
-h1 {
-    font-size: 2.5em;
+h1.animate-character {
+    font-size: 250px; /* Adjust the font size as needed */
     margin-bottom: 20px;
     display: inline-block;
     text-transform: uppercase;
