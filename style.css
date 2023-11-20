@@ -7,6 +7,7 @@ body {
     background-image: linear-gradient(-45deg, #292929, #121212);
     background-attachment: fixed;
 }
+
 h1 {
     margin-top: 10px;
     font-size: 4em;
@@ -17,6 +18,7 @@ h1 {
     color: transparent;
     animation: textclip 2s linear infinite;
 }
+
 .controls-container {
     display: flex;
     align-items: center;
@@ -59,6 +61,7 @@ h1 {
     background-color: #fff;
     color: #333;
 }
+
 .light-mode h1 {
     background-image: linear-gradient(
         -225deg,
@@ -88,6 +91,7 @@ h1 {
         background-position: 200% center;
     }
 }
+
 .toggle-container {
     position: absolute;
     top: 20px;
@@ -111,6 +115,7 @@ h1 {
 #toggleModeSwitch:checked {
     background-color: #4285f4;
 }
+
 #toggleModeSwitch::before {
     content: '';
     position: absolute;
@@ -121,17 +126,21 @@ h1 {
     transform: translate(2px, 2px);
     transition: transform 0.3s;
 }
+
 #toggleModeSwitch:checked::before {
     transform: translate(20px, 2px);
 }
+
 #toggleModeLabel {
     color: #fff; 
     font-size: 14px;
     transition: color 0.3s; 
 }
+
 .light-mode #toggleModeLabel {
     color: #000; 
 }
+
 .container {
     max-width: 900px;
     margin: 80px auto;
@@ -218,19 +227,36 @@ button:hover {
     outline: none;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .light-mode #searchInput {
     color: #333;
 }
 
-.search-bar:hover,
-.light-mode .search-bar:hover {
-    background-color: #444;
+..search-bar:hover {
+    background-color: #555;
 }
 
-#searchInput:hover,
-.light-mode #searchInput:hover {
-    background-color: #444;
+.light-mode .search-bar:hover {
+    background-color: #ddd; 
 }
+
+.dark-mode .search-bar:hover {
+    background-color: #444; 
+}
+
+#searchInput:hover {
+    background-color: #555;
+}
+
+.light-mode #searchInput:hover {
+    background-color: #ddd;
+}
+
+.dark-mode #searchInput:hover {
+    background-color: #444; 
+}
+
+
 .search-icons {
     display: flex;
     align-items: center;
@@ -277,4 +303,3 @@ button:hover {
 .dark-mode #micIcon {
     filter: invert(100%) grayscale(100%);
 }
-
