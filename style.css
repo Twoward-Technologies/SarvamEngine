@@ -283,7 +283,13 @@ button:hover {
     border-radius: 20px;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: filter 0.3s;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+#searchIcon,
+#micIcon {
+    filter: invert(100%) grayscale(100%);
+    background-color: transparent;
 }
 
 #searchIcon {
@@ -302,4 +308,8 @@ button:hover {
 .dark-mode #searchIcon,
 .dark-mode #micIcon {
     filter: invert(100%) grayscale(100%);
+}
+.icon:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
 }
