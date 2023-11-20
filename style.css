@@ -203,31 +203,34 @@ button:hover {
     background-color: #333;
     border-radius: 20px;
     padding: 10px;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
 }
 
 .light-mode .search-bar {
-    background-color: #eee; 
+    background-color: #eee;
 }
 
 #searchInput {
-    flex: 1; 
+    flex: 1;
     border: none;
     background-color: transparent;
     color: #fff;
     outline: none;
+    transition: background-color 0.3s, color 0.3s;
 }
-
 .light-mode #searchInput {
-    color: #333; 
+    color: #333;
 }
 
-.search-bar:hover #searchInput,
-.light-mode .search-bar:hover #searchInput {
+.search-bar:hover,
+.light-mode .search-bar:hover {
     background-color: #444;
-    flex: 1;
 }
 
+#searchInput:hover,
+.light-mode #searchInput:hover {
+    background-color: #444;
+}
 .search-icons {
     display: flex;
     align-items: center;
