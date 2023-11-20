@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var searchInput = document.getElementById('searchInput');
     searchInput.focus();
 
-    // Add event listener to hide suggestion list on outside click
-    document.addEventListener('click', function (event) {
+     document.addEventListener('click', function (event) {
         var suggestionList = document.getElementById('suggestionList');
         var searchInput = document.getElementById('searchInput');
 
@@ -13,34 +12,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Check for user's preference from localStorage or system preferences
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // Apply initial mode
 setTheme(prefersDarkMode ? 'dark' : 'light');
 
-// Set the default state of the toggle switch
 var toggleModeSwitch = document.getElementById('toggleModeSwitch');
 toggleModeSwitch.checked = prefersDarkMode;
 
-// Toggle between light and dark mode
 toggleModeSwitch.addEventListener('change', function () {
     const newTheme = toggleModeSwitch.checked ? 'dark' : 'light';
     setTheme(newTheme);
 });
 });
-// Function to change language
 function changeLanguage() {
     var languageDropdown = document.getElementById('languageDropdown');
     var selectedLanguage = languageDropdown.value;
     
-    // Implement logic to change language based on selectedLanguage
     console.log('Selected Language:', selectedLanguage);
 }
 
-// Function to toggle theme
 function toggleTheme() {
-    // Implement theme toggle logic here
     var toggleModeSwitch = document.getElementById('toggleModeSwitch');
     var newTheme = toggleModeSwitch.checked ? 'dark' : 'light';
     setTheme(newTheme);
@@ -51,7 +42,6 @@ function setTheme(theme) {
     document.body.classList.add(theme + '-mode');
     localStorage.setItem('theme', theme);
 
-    // Update label text based on theme
     var toggleModeLabel = document.getElementById('toggleModeLabel');
     toggleModeLabel.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
 }
@@ -60,14 +50,9 @@ function showSuggestions() {
     var input = document.getElementById('searchInput');
     var suggestionList = document.getElementById('suggestionList');
     var inputValue = input.value.trim();
-
-    // Clear previous suggestions
     suggestionList.innerHTML = '';
 
-    // Show suggestions only if there's a search query
     if (inputValue !== '') {
-        // In a real implementation, you would fetch suggestions from a backend
-        // For simplicity, let's use a hardcoded array
         var suggestions = ['How to make panneer butter masala', 'Make a presentation on global warming', 'JavaScript', 'Web Development', 'Programming'];
 
         // Display suggestions
@@ -85,25 +70,19 @@ function showSuggestions() {
 function performSearch() {
     var searchInput = document.getElementById('searchInput');
     var query = searchInput.value.trim();
-
-    // In a real implementation, you would redirect to a search results page
-    // For simplicity, let's log the query to the console
     console.log('Performing search for:', query);
 }
 
 function luckySearch() {
-    // In a real implementation, you would redirect to a random search result page
-    // For simplicity, let's log a message to the console
     console.log('Feeling lucky!');
 }
 
-// Add this function to simulate voice input (you can replace this with actual voice input logic)
+
 function startVoiceInput() {
     var searchInput = document.getElementById('searchInput');
     searchInput.value = 'Voice input placeholder';
 }
 
-// Add this at the end of the script.js file to set focus on the search input when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     var searchInput = document.getElementById('searchInput');
     searchInput.focus();
