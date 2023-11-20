@@ -244,9 +244,10 @@ button:hover {
     height: 20px;
     margin: 0 5px;
     cursor: pointer;
+    border-radius: 20px;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: filter 0.3s; /* Add transition for smooth color change */
+    transition: filter 0.3s;
 }
 
 #searchIcon {
@@ -254,10 +255,9 @@ button:hover {
 }
 
 #micIcon {
-    background-image: url('assests/mic.png'); /* Replace with your actual path */
+    background-image: url('assests/mic.png');
 }
 
-/* Adjust icon colors for dark and light modes */
 .light-mode #searchIcon,
 .light-mode #micIcon {
     filter: invert(0%) grayscale(100%);
