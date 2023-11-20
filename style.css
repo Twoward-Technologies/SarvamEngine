@@ -135,7 +135,7 @@ h1 {
     max-width: 900px;
     margin: 80px auto;
     padding: 130px;
-    border-radius: 30px;
+    border-radius: 100px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
@@ -196,7 +196,7 @@ button:hover {
     display: flex;
     align-items: center;
     background-color: #333;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px;
     transition: background-color 0.3s; 
 }
@@ -220,6 +220,7 @@ button:hover {
 .search-bar:hover #searchInput,
 .light-mode .search-bar:hover #searchInput {
     background-color: #444;
+    flex: 1;
 }
 
 .search-icons {
