@@ -66,7 +66,6 @@ function showSuggestions() {
         suggestionList.style.display = 'none';
     }
 }
-//hELLO WORLD
 
 function performSearch() {
     var searchInput = document.getElementById('searchInput');
