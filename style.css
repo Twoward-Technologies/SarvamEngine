@@ -29,6 +29,7 @@ h1 {
     display: flex;
     align-items: center;
     margin-right: 20px;
+    padding: 10px;
 }
 
 .language-logo {
@@ -37,13 +38,13 @@ h1 {
 }
 
 #languageDropdown {
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    appearance: none;
+    border-radius: 7px;
+    appearance: inverted;
     -moz-appearance: none;
     -webkit-appearance: none;
-    background: transparent;
+    background:transparent;
     color: #555;
     cursor: pointer;
 }
