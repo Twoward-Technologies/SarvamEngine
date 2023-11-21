@@ -68,9 +68,26 @@ h1 {
     border-radius: 7px;
 }
 
-/* Light mode */
 .light-mode .language-dropdown ul {
     background-color: #f4f4f4;
+}
+
+.light-mode button {
+    background-color: #4285f4;
+    color: #fff;
+}
+
+.light-mode button:hover {
+    background-color: #3367d6;
+}
+
+.dark-mode button {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.dark-mode button:hover {
+    background-color: #333;
 }
 
 .language-dropdown li {
