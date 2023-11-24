@@ -13,37 +13,64 @@
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Sarvam Search" oninput="showSuggestions()">
                 <div class="search-icons">
-    <div class="icon" id="searchIcon"></div>
-    <div class="icon" id="micIcon" onclick="startVoiceInput()"></div>
-</div>
+                    <div class="icon" id="searchIcon"></div>
+                    <div class="icon" id="micIcon" onclick="startVoiceInput()"></div>
+                </div>
             </div>
             <ul id="suggestionList"></ul>
         </div>
         <button onclick="performSearch()">Sarvam Search</button>
         <button onclick="luckySearch()">Toofani</button>
-<div class="toggle-container">
-    <div class="language-container">
-    <div class="language-logo">🌐</div>
-    <div class="language-dropdown" id="languageDropdown">
-        <ul>
-            <li><a href="#">English</a></li>
-            <li><a href="#">Hindi</a></li>
-            <li><a href="#">Punjabi</a></li>
-            <li><a href="#">Marathi</a></li>
-            <li><a href="#">Tamil</a></li>
-            <li><a href="#">Malayalam</a></li>
-            <li><a href="#">Telgue</a></li>
-            <li><a href="#">Manipuri</a></li>
-            <li><a href="#">Bengla</a></li>
-        </ul>
+        <div class="toggle-container">
+        <div class="language-container">
+                <div class="language-logo"><font size=6px>🌐</font></div>
+                <div class="language-dropdown" id="languageDropdown">
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                        <li><a href="#">Punjabi</a></li>
+                        <li><a href="#">Marathi</a></li>
+                        <li><a href="#">Tamil</a></li>
+                        <li><a href="#">Malayalam</a></li>
+                        <li><a href="#">Telugu</a></li>
+                        <li><a href="#">Manipuri</a></li>
+                        <li><a href="#">Bengali</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <input type="checkbox" id="toggleModeSwitch">
+            <label for="toggleModeSwitch" id="toggleModeLabel"></label>
+             <div class="account-menu">
+    <img src="assests/profile.jpeg" alt="Profile Picture" class="profile-picture">
+    <div class="account-info">
+        <span class="account-name">Sankalp Jain</span>
+        </div>
+    <div class="account-options">
+        <li><span class="account-name">sankalp001jain@yahoo.com</span></li>
+        <li>My Profile</li>
+        <li>Settings</li>
+        <li>Help</li>
+        <li>Sign Out</li>
     </div>
 </div>
-    <input type="checkbox" id="toggleModeSwitch">
-    <label for="toggleModeSwitch" id="toggleModeLabel"></label>
-
-</div>
+        </div>
 
     </div>
+    <footer>
+        <div class="footer-level-1">
+            Made In Bharat <img src="assests/indianflag.png" alt="Indian Flag">
+        </div>
+        <div class="footer-level-2">
+            <a href="#">About</a>
+            <a href="#">Advertising</a>
+            <a href="#">Business</a>
+            <a href="#">How Search works</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Settings</a>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

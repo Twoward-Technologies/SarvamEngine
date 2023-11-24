@@ -7,6 +7,102 @@ body {
     background-image: linear-gradient(-45deg, #292929, #121212);
     background-attachment: fixed;
 }
+/* Account Menu Styles */
+.account-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 35px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.account-logo {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.account-name {
+    font-weight: bold;
+}
+
+.account-email {
+    font-size: 14px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.account-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    padding: 20px;
+    width: 250px;
+    z-index: 1;
+}
+
+.account-menu:hover .account-options {
+    display: block;
+}
+
+.account-options li {
+    list-style: none;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.account-options li:hover {
+    background-color: #f4f4f4;
+}
+
+/* Light Mode Styles */
+.light-mode .account-menu {
+    background-color: #4285f4;
+    color: #fff;
+}
+
+.light-mode .account-menu:hover {
+    background-color: #3367d6;
+}
+
+.light-mode li{
+    color: #5A5A5A;
+}
+.light-mode .account-options {
+    background-color: #fff;
+}
+
+/* Dark Mode Styles */
+.dark-mode .account-menu {
+    background-color: #181818;
+    color: #fff;
+}
+
+.dark-mode .account-menu:hover {
+    background-color: #333;
+}
+
+.dark-mode .account-options {
+    background-color: #292929;
+}
+
 
 h1 {
     margin-top: 10px;
@@ -16,6 +112,7 @@ h1 {
     text-transform: uppercase;
     background-size: 200% auto;
     color: transparent;
+    font-family: revert-layer;
     animation: textclip 2s linear infinite;
 }
 
@@ -26,8 +123,9 @@ h1 {
 }
 
 .language-logo {
-    font-size: 18px;
+    font-size: 25px;
     margin-right: 8px;
+    padding: -10px;
 }
 
 .language-container {
@@ -36,10 +134,10 @@ h1 {
 }
 
 .language-container::before {
-    content: '\25BC'; /* Unicode character for a down arrow ▼ */
-    font-size: 12px;
+    font-size: 15px;
     color: #ccc;
     margin-right: 5px;
+    transition: transform 0.3s;
 }
 
 .language-dropdown {
@@ -47,10 +145,17 @@ h1 {
     top: 100%;
     left: 0;
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
+    visibility: collapse;
+    transform: translateY(-20px);
     transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
     z-index: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-container:hover::before {
+    transform: rotate(180deg);
 }
 
 .language-container:hover .language-dropdown {
@@ -59,41 +164,50 @@ h1 {
     transform: translateY(0);
 }
 
+.dark-mode .language-dropdown a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.light-mode .language-dropdown a{
+    color: blue;
+    text-align: center;
+    text-decoration: none;
+}
 .language-dropdown ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.light-mode .language-dropdown ul {
-    background-color: #f4f4f4;
+/* Light Mode Styles for Language Dropdown */
+.light-mode .language-dropdown {
+    background-color: #fff; /* Adjust as needed */
 }
 
-.light-mode button {
-    background-color: #4285f4;
+.light-mode .language-dropdown li:hover {
+    background-color: #f0f0f0; /* Adjust as needed */
+}
+
+/* Dark Mode Styles for Language Dropdown */
+.dark-mode .language-dropdown {
+    background-color: #333; /* Adjust as needed */
     color: #fff;
 }
 
-.light-mode button:hover {
-    background-color: #3367d6;
-}
-
-.dark-mode button {
-    background-color: #5A5A5A;
-    color: #fff;
-}
-
-.dark-mode button:hover {
-    background-color: #333;
+.dark-mode .language-dropdown li:hover {
+    background-color: #555; /* Adjust as needed */
 }
 
 .language-dropdown li {
-    padding: 10px;
+    padding: 14px;
     cursor: pointer;
     border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
 }
 
 .language-dropdown li:last-child {
@@ -101,16 +215,34 @@ h1 {
 }
 
 .language-dropdown li:hover {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Adjust as needed */
+}
+
+/* Add a subtle animation to the language dropdown */
+@keyframes fadeInOut {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-dropdown.fade-in-out {
+    animation: fadeInOut 0.3s ease;
 }
 
 .light-mode h1 {
     background-image: linear-gradient(
-        -225deg,
-        #00c6fb 0%,
-        #005bea 29%,
-        #00c6fb 67%,
-        #005bea 100%
+        to right,
+        #ff9933 0%,
+        #ff9933 33.33%,
+        #fff 33.33%,
+        #fff 66.66%,
+        #138808 66.66%,
+        #138808 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -186,9 +318,9 @@ h1 {
 .container {
     max-width: 900px;
     margin: 80px auto;
-    padding: 130px;
+    padding: 90px;
     border-radius: 100px;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -216,34 +348,62 @@ h1 {
     padding: 0;
     margin: 0;
     position: absolute;
-    width: 80%;
-    background-color: #fff;
+    border-radius: 30px;
+    width: 100%; /* Set the width to 100% */
+    max-width: 1000px; /* Set a maximum width if needed */
+    background-color: #fff; /* Adjust as needed */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     left: 50%;
     transform: translateX(-50%);
     display: none;
+    z-index: 2; /* Ensure it's above other elements */
 }
 
 #suggestionList li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 #suggestionList li:hover {
     background-color: #f4f4f4;
 }
 
+.light-mode #suggestionList {
+    background-color: #eee; /* Adjust as needed for light mode */
+    color: #333;
+}
+
+.dark-mode #suggestionList {
+    background-color: #333; /* Adjust as needed for dark mode */
+    color: #fff;
+}
+
+#searchInput:hover + #suggestionList {
+    display: block;
+}
+.dark-mode button{
+    background-color: #5A5A5A;
+    transition: 0.3s;
+}
+.light-mode button{
+    background-color: #4285f4;
+}
 button {
     margin-top: 20px;
     padding: 10px 25px;
     background-color: #4285f4;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 25px;
     border: none;
     cursor: pointer;
+    transition: filter 0.3s, transform 0.3s;    
 }
 
+.dark-mode button:hover{
+    background-color: #818589;
+}
 button:hover {
     background-color: #3367d6;
 }
@@ -361,11 +521,11 @@ button:hover {
     }
 
     .container {
-        padding: 30px;
+        padding: 35px;
     }
 
     .search-bar {
-        padding: 8px;
+        padding: 10px;
     }
 
     #suggestionList {
@@ -375,5 +535,140 @@ button:hover {
     .icon {
         width: 16px;
         height: 16px;
+    }
+}
+/* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #111; /* Adjust as needed for dark mode */
+    color: #ggg; /* Adjust as needed for dark mode */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-level-1 {
+    margin-bottom: 10px;
+}
+
+.footer-level-1 img {
+    width: 20px; /* Adjust as needed */
+    margin-left: 5px;
+}
+
+.footer-level-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-level-2 a {
+    color: #fff; 
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.light-mode .footer-level-2 a {
+    color: #545454; 
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer-level-2 a:hover {
+    color: #4285f4;
+}
+
+.light-mode footer {
+    background-image: linear-gradient(-45deg, #f4f4f4, #A9A9A9); /* Adjust as needed for light mode */
+    color: #333; 
+}
+.light-mode .footer-level-2 a:hover {
+    color: #3367d6; 
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 60px;
+    }
+
+    .language-logo {
+        font-size: 20px;
+    }
+
+    .profile-picture {
+        width: 30px;
+        height: 30px;
+    }
+
+    .search-bar {
+        padding: 8px;
+    }
+
+    #searchInput {
+        font-size: 14px;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    .footer-level-1 img {
+        width: 16px;
+    }
+
+    .footer-level-2 a {
+        font-size: 12px;
+        margin: 0 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .language-logo {
+        font-size: 18px;
+    }
+
+    .profile-picture {
+        width: 25px;
+        height: 25px;
+    }
+
+    .search-bar {
+        padding: 6px;
+    }
+
+    #searchInput {
+        font-size: 12px;
+    }
+
+    .icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .footer-level-1 img {
+        width: 14px;
+    }
+
+    .footer-level-2 a {
+        font-size: 10px;
+        margin: 0 6px;
     }
 }
