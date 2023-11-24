@@ -672,3 +672,56 @@ footer {
         margin: 0 6px;
     }
 }
+.trending-topics {
+    display: none; /* Initially hide on larger screens */
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Adjust as needed */
+    color: #fff;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 480px) {
+    .trending-topics {
+        display: block; /* Show on smaller screens */
+        margin-top: 20px; /* Add some spacing from the content */
+    }
+
+    /* Adjust the styles for 480px width */
+    .trending-topics h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .trending-topic-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .trending-topic-item {
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+        background-color: #555; /* Adjust as needed */
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .trending-topic-item:hover {
+        background-color: #777; /* Adjust as needed */
+    }
+
+    /* Adjust footer styles for 480px width */
+    footer {
+        padding: 15px;
+    }
+
+    .footer-level-1 img {
+        width: 16px;
+    }
+
+    .footer-level-2 a {
+        font-size: 12px;
+        margin: 0 8px;
+    }
+}
