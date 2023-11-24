@@ -684,7 +684,10 @@ footer {
 @media screen and (max-width: 480px) {
     .trending-topics {
         display: block; /* Show on smaller screens */
-        margin-top: 20px; /* Add some spacing from the content */
+        margin-top: 40px; /* Add some spacing from the content */
+        border-radius: 40px;
+        width: 80%;
+        margin-left: -25px;
     }
 
     /* Adjust the styles for 480px width */
@@ -701,7 +704,7 @@ footer {
     .trending-topic-item {
         padding: 8px;
         margin-bottom: 8px;
-        border-radius: 10px;
+        border-radius: 20px;
         background-color: #555; /* Adjust as needed */
         cursor: pointer;
         transition: background-color 0.3s;
