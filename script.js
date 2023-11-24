@@ -87,3 +87,29 @@ document.addEventListener('DOMContentLoaded', function () {
     var searchInput = document.getElementById('searchInput');
     searchInput.focus();
 });
+document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the DOM to be fully loaded
+    const welcomeText = document.getElementById('welcomeText');
+
+    anime.timeline({ loop: false })
+        .add({
+            targets: '#welcomeText',
+            opacity: [0, 1],
+            easing: 'easeInOutQuad',
+            duration: 1500
+        })
+        .add({
+            targets: '#welcomeText',
+            translateY: [50, 0],
+            opacity: [1, 1],
+            easing: 'easeInOutQuad',
+            duration: 1000
+        });
+
+    setTimeout(function () {
+        // Hide the intro animation
+        document.querySelector('.intro-animation').style.display = 'none';
+        // Show the main content
+        document.querySelector('.container').style.display = 'block';
+    }, 3000); // 3000 milliseconds = 3 seconds
+});
