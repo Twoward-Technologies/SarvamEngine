@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sarvam - Search Results</title>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="How to make palak paneer" oninput="showSuggestions()">
+                <div class="search-icons">
+                    <div class="icon" id="searchIcon"></div>
+                    <div class="icon" id="micIcon" onclick="startVoiceInput()"></div>
+                </div>
+            </div>
+            <ul id="suggestionList"></ul>
+        </div>
+        <div class="search-results">
+            <h2>Search Results for "How to make palak paneer"</h2>
+            <!-- Example search results -->
+            <div class="search-result">
+                <h3>Palak Paneer Recipe</h3>
+                <p>Learn to make delicious palak paneer with our easy step-by-step guide.</p>
+                <a href="#">Read Recipe</a>
+            </div>
+            <div class="search-result">
+                <h3>Quick Palak Paneer Tutorial</h3>
+                <p>Check out this quick tutorial for making palak paneer in just 20 minutes.</p>
+                <a href="#">Watch Video</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer: A Healthy Twist</h3>
+                <p>Discover a healthy version of palak paneer that's rich in nutrients and flavor.</p>
+                <a href="#">Explore</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer for Beginners</h3>
+                <p>If you're new to cooking, here's a simple palak paneer recipe for you.</p>
+                <a href="#">Get Started</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer Cooking Tips</h3>
+                <p>Learn some useful tips and tricks for perfecting your palak paneer.</p>
+                <a href="#">Read Tips</a>
+            </div>
+            <div class="search-result">
+                <h3>Restaurant-Style Palak Paneer</h3>
+                <p>Craving restaurant-quality palak paneer? Try this recipe at home.</p>
+                <a href="#">View Recipe</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer Variations</h3>
+                <p>Explore different variations of palak paneer to suit your taste preferences.</p>
+                <a href="#">Discover</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer with a Twist</h3>
+                <p>Add a unique twist to your palak paneer with this creative recipe.</p>
+                <a href="#">Try Now</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer: Step-by-Step Guide</h3>
+                <p>Follow our detailed step-by-step guide to make palak paneer like a pro.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer in 30 Minutes</h3>
+                <p>Short on time? Here's a quick palak paneer recipe that takes only 30 minutes.</p>
+                <a href="#">Quick Recipe</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer Secrets</h3>
+                <p>Unlock the secrets behind the perfect palak paneer with our insider tips.</p>
+                <a href="#">Discover</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer: Family Favorite</h3>
+                <p>Make palak paneer a family favorite with this crowd-pleasing recipe.</p>
+                <a href="#">Family Recipe</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer Around the World</h3>
+                <p>Explore how different cultures prepare palak paneer with this global journey.</p>
+                <a href="#">Explore</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer: Health Benefits</h3>
+                <p>Learn about the health benefits of including palak paneer in your diet.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="search-result">
+                <h3>Palak Paneer Party Menu</h3>
+                <p>Planning a party? Include palak paneer in your menu with our party-friendly recipe.</p>
+                <a href="#">Party Recipe</a>
+            </div>
+            <!-- Add more search results as needed -->
+        </div>
+    </div>
+    <footer>
+        <div class="footer-level-1">
+            Made In Bharat <img src="assests/indianflag.png" alt="Indian Flag">
+        </div>
+        <div class="footer-level-2">
+            <a href="#">About</a>
+            <a href="#">Advertising</a>
+            <a href="#">Business</a>
+            <a href="#">How Search works</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Settings</a>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
