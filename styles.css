@@ -1,0 +1,1208 @@
+body {
+    min-height: 100%;
+    position: relative;
+}
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+    width: 60%;
+}
+
+.image-container .image-item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height: 300px; /* Set a fixed height for the image container */
+}
+
+.image-container .image-item:hover {
+    transform: scale(1.05);
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.image-item .para {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    width: 100%;
+    color: black;
+    text-align: left;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: Add a semi-transparent background for better readability */
+}
+
+.dark-mode .image-item .para {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    text-align: left;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better readability */
+}
+
+    #suggestionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    z-index: 1;
+    display: none; /* Hide the suggestion list by default */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    top: calc(100% + 5px); /* Position below the search bar */
+}
+:root {
+  --scrollbar-thumb-color: #3498db;
+  --scrollbar-track-color: #f1f1f1;
+}
+
+body.light-mode {
+  --scrollbar-thumb-color: #888888; /* Light mode thumb color */
+  --scrollbar-track-color: #f1f1f1; /* Light mode track color */
+}
+
+body.dark-mode {
+  --scrollbar-thumb-color: #ffffff; /* Dark mode thumb color */
+  --scrollbar-track-color: #333333; /* Dark mode track color */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+/* For Firefox */
+scrollbar {
+  width: 10px;
+}
+
+scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 5px;
+}
+
+scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+.language-logo {
+    font-size: 25px;
+    margin-right: 8px;
+    padding: -10px;
+}
+
+.language-container {
+    position: relative;
+    display: inline-block;
+}
+
+.language-container::before {
+    font-size: 15px;
+    color: #ccc;
+    margin-right: 5px;
+    transition: transform 0.3s;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: collapse;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-container:hover::before {
+    transform: rotate(180deg);
+}
+
+.language-container:hover .language-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dark-mode .language-dropdown a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.language-dropdown a{
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+}
+.language-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Light Mode Styles for Language Dropdown */
+.light-mode .language-dropdown {
+    background-color: #fff; /* Adjust as needed */
+}
+
+.light-mode .language-dropdown li:hover {
+    background-color: #f0f0f0; /* Adjust as needed */
+}
+
+/* Dark Mode Styles for Language Dropdown */
+.dark-mode .language-dropdown {
+    background-color: #333; /* Adjust as needed */
+    color: #fff;
+}
+
+.dark-mode .language-dropdown li:hover {
+    background-color: #555; /* Adjust as needed */
+}
+
+.language-dropdown li {
+    padding: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.language-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.language-dropdown li:hover {
+    background-color: #e0e0e0; /* Adjust as needed */
+}
+
+/* Add a subtle animation to the language dropdown */
+@keyframes fadeInOut {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-dropdown.fade-in-out {
+    animation: fadeInOut 0.3s ease;
+}
+#searchbar {
+    position: relative; /* Ensure the parent container is positioned */
+}
+
+#searchbar input:focus + #suggestionList {
+    display: block; /* Show the suggestion list when the input is focused */
+}
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode #textweb {
+    color:  lightgray;
+}
+.typing-animation-container {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .typing-animation {
+            border-right: 2px solid #007bff;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 1s steps(40, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+:root {
+  --background-color-light: #fff;
+  --text-color-light: #000;
+  --link-color-light: #4285f4;
+
+  --background-color-dark: #333;
+  --text-color-dark: #fff;
+  --link-color-dark: #03a9f4;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --link-color: var(--link-color-dark);
+}
+
+/* Light Mode */
+body.light-mode {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --link-color: var(--link-color-light);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#header {
+  background-color: var(--background-color);
+  z-index: 3;
+  color: var(--text-color);
+}
+
+#toggleModeSwitch:checked {
+  background-color: var(--link-color);
+}
+
+#toggleModeLabel {
+    color: #fff; 
+    font-size: 14px;
+    transition: color 0.3s; 
+}
+
+.light-mode #toggleModeLabel {
+    color: #000; 
+}
+
+#toggleModeSwitch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    -webkit-appearance: none;
+    background-color: #ccc;
+    outline: none;
+    border-radius: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#toggleModeSwitch:checked {
+    background-color: #4285f4;
+}
+#toggleModeSwitch::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(2px, 2px);
+    transition: transform 0.3s;
+}
+
+#toggleModeSwitch:checked::before {
+    transform: translate(20px, 2px);
+}
+
+#toggleModeLabel {
+    color: #fff; 
+    font-size: 14px;
+    transition: color 0.3s; 
+}
+
+.light-mode #toggleModeLabel {
+    color: #000; 
+}
+
+#topbar {
+    display: flex;
+    height: 64px;
+    width: 100%;
+    align-items: flex-end;
+    position: fixed;
+    background-color: var(--background-color);
+}
+
+#searchbarimage {
+    height: 30px;
+    padding: 0px 28px 10px 30px;
+    cursor: pointer;
+}
+h1 {
+    margin-top: 0px;
+    font-size: 2em;
+    margin-bottom: 0px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 10px;
+    background-size: 200% auto;
+    color: transparent;
+    font-family: revert-layer;
+    animation: textclip 2s linear infinite;
+    background-image: linear-gradient(
+        to right,
+        #ff9933 0%,
+        #ffcc66 15%,
+        #ffcc66 30%,
+        #fff 45%,
+        #fff 60%,
+        #138808 75%,
+        #138808 100%,
+        #138808 75%,
+        #fff 60%,
+        #fff 45%,
+        #ffcc66 30%,
+        #ffcc66 15%,
+        #ff9933 0%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dark-mode h1 {
+    background-image: linear-gradient(
+        -225deg,
+        #231557 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #fff800 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+/* Account Menu Styles */
+.account-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 760px;
+    cursor: pointer;
+    padding: -19px;
+    border-radius: 35px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.account-logo {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.account-name {
+    font-weight: bold;
+}
+
+.account-email {
+    font-size: 14px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.account-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    padding: 25px;
+    width: 250px;
+    z-index: 1;
+}
+
+.account-menu:hover .account-options {
+    display: block;
+    background-color: #f0f0f0;
+}
+
+.dark-mode .account-menu:hover .account-options {
+    display: block;
+    background-color: #333;
+}
+.account-options li {
+    list-style: none;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.account-options li:hover {
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+}
+.dark-mode .account-options li:hover {
+    background-color: #a9a9a9;
+}
+
+/* Search Bar Styles */
+#searchbarmic {
+    height: 45px;
+    width: 35px;
+    margin-left: auto;
+    background-color: var(--background-color);
+}
+.dark-mode #searchbarmic {
+     filter: invert(100%) grayscale(100%);
+    background-color: transparent;
+}
+
+#searchbarmic img {
+    height: 25px;
+}
+
+#searchbarbutton {
+    height: 45px;
+    width: 55px;
+    position: relative;
+    margin-right: -2px;
+    background-color: var(--background-color);
+}
+.dark-mode #searchbarbutton {
+     filter: invert(100%) grayscale(100%);
+    background-color: transparent;
+}
+#searchbarbutton img {
+    height: 19px;
+    width: 19px;
+    position: relative;
+    left: -3px;
+}
+
+#searchbar {
+    width: 625px;
+    height: 45px;
+    border-radius: 100px;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 16px;
+    position: relative;
+    bottom: 5px;
+    overflow: hidden;
+    display: flex;
+    z-index: 100;
+}
+
+#searchbar:hover {
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+#searchbar > input {
+    height: 45px;
+    border-style: none;
+    font-size: 16px;
+    line-height: 45px;
+    padding-left: 20px;
+    flex: 1;
+}
+.dark-mode #searchbar > input {
+    background-color: #333;
+    color: white;
+}
+
+#searchbar > input:focus {
+    outline: none;
+}
+
+#searchbar button {
+    border: none;
+    cursor: pointer;
+}
+
+#searchbar button:focus {
+    outline: none;
+}
+#boxesicon {
+    width: 25px;
+    height: 25px;
+    opacity: 0.6;
+    background-size: 26px;
+    position: absolute;
+    right: 130px;
+    bottom: 14px;
+}
+
+#optionsmenuactive::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--link-color);
+    left: 5px;
+    bottom: 0px;
+}
+
+#optionsmenu2 {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 100px;
+}
+
+#optionsmenu2 li {
+    padding: 0px 10px 15px 20px;
+}
+
+#searchresultsarea {
+    margin-left: 150px;
+    font-family: 'Arial';
+    color: var(--text-color);
+}
+
+#searchresultsnumber {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.searchresult {
+    margin-left: 8px;
+}
+
+.searchresult h2 {
+    font-size: 19px;
+    line-height: 18px;
+    font-weight: normal;
+    color: mediumblue;
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
+.dark-mode .searchresult h2 {
+    font-size: 19px;
+    line-height: 18px;
+    font-weight: normal;
+    color: var(--link-color);
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
+
+.searchresult a {
+    font-size: 14px;
+    line-height: 14px;
+    color: green;
+    margin-bottom: 0px;
+}
+
+.searchresult button {
+    font-size: 10px;
+    line-height: 14px;
+    color: green;
+    margin-bottom: 0px;
+    padding: 0px;
+    border-width: 0px;
+    background-color: var(--background-color);
+}
+
+#bellicon {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(105, 105, 105);
+    background-size: 12px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    position: absolute;
+    right: 90px;
+    bottom: 18px;
+}
+
+#profileimage {
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 40px;
+    bottom: 12px;
+}
+
+#optionsbar {
+    width: 100%;
+    height: 50px;
+    border-width: 0px;
+    border-bottom: 1px;
+    border-color: lightgray;
+    border-style: solid;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Arial';
+    font-size: 13px;
+    color: var(--text-color);
+    padding-top: 64px;
+}
+
+#optionsmenu1 {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 150px;
+}
+
+#optionsmenu1 li {
+    padding: 0px 10px 15px 20px;
+}
+
+#optionsmenuactive {
+    color: var(--link-color);
+    font-weight: bold;
+    position: relative;
+    z-index: -1;
+}
+
+.searchresult p {
+    width: 625px;
+    font-size: 13px;
+    margin-top: 0px;
+    color: rgb(82, 82, 82);
+}
+
+.relatedsearches h3 {
+    font-weight: normal;
+    font-size: 19px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.relatedlists ul {
+    list-style: none;
+    color: var(--link-color);
+    padding-left: 0px;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.relatedlists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.relatedlists ul li {
+    margin-bottom: 8px;
+}
+
+
+.pagelist {
+    list-style: none;
+    color: rgb(29, 135, 255);
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+}
+
+.pagelistprevious::before {
+    content: '<';
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: -35px;
+    color: rgb(29, 135, 255);
+    font-size: 20px;
+    transform: scale(0.7, 1.2);
+}
+
+.pagelistprevious::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -40px;
+    top: -35px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: 28px;
+}
+
+.pagelistfirst {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.pagelistnumber::before, .pagelistfirst::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -2px;
+    top: -21px;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    z-index: 3;
+}
+
+.pagelistnumber::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -6px;
+    top: -25px;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(255, 196, 0);
+    z-index: 2;
+}
+
+.pagelistfirst::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -6px;
+    top: -25px;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    z-index: 2;
+}
+
+.pagelist li {
+    margin-right: 15px;
+    position: relative;
+}
+
+.pagelistnext {
+    margin-left: 40px;
+    font-size: 13px;
+}
+
+.pagelistnext::before {
+    content: '>';
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: -35px;
+    color: rgb(29, 135, 255);
+    font-size: 20px;
+    transform: scale(0.7, 1.2);
+}
+
+.pagelistnext::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -55px;
+    top: -37px;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 48px;
+}
+
+
+#footer {
+    background-color: rgb(238, 238, 238);
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 13px;
+    font-family: 'arial';
+    color: rgb(85, 85, 85);
+}
+
+#footermenu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 135px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+#footermenu li {
+    padding-right: 30px;
+}
+
+#footerlocation {
+    display: flex;
+    direction: row;
+    margin-left: 175px;
+    position: relative;
+    top: -5px;
+}
+
+#footerlocation p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+/* Additional styles for chat box */
+.chat-box-container {
+    width: 30%;
+    z-index: -1;
+    margin-left: auto;
+    background-color: #619eff;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    right: 40px;
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards 0.5s;
+}
+
+.chat-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.default-message {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+    /* Style the input field */
+    .sarvam-input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      margin-right: 10px;
+    }
+    .dark-mode .sarvam-input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      background-color: #555;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      margin-right: 10px;
+    }
+
+    /* Style the button */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    .dark-mode .send-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    /* Hover effect for the button */
+    .send-button:hover {
+      background-color: #2980b9;
+    }
+
+.chat-input {
+    flex: 1;
+    width: 100%;
+    border: 1px transparent; #ddd;
+    border-radius: 5px;
+}
+
+.send-button {
+    padding: 8px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-animation {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#animation-text {
+    font-size: 18px;
+    margin: 0;
+    white-space: prewrap;
+    overflow: hidden;
+    width: 0;
+    animation: slide-in 2s forwards;
+    color: yellow;
+}
+
+@keyframes slide-in {
+    to {
+        width: 100%;
+    }
+}
+    .chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        animation: fadeInUp 0.5s forwards 0.5s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .typing-animation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .typing-animation {
+        white-space: pre-wrap;
+        overflow: hidden;
+        width: 0;
+        animation: slide-in 8s forwards;
+        color: yellow;
+        margin-top: 20px;
+    }
+
+    @keyframes slide-in {
+        to {
+            width: 100%;
+        }
+    }
+
+@media screen and (max-width: 1000px) {
+    .searchresult {
+        width: 100%;
+    }
+
+    #searchresultsarea {
+        width: 100%;
+    }
+
+    #searchresultsnumber {
+        width: 100%;
+    }
+
+    .chat-box-container {
+        display: none;
+    }
+}
+:root {
+    --primary-color: rgb(20, 100, 200);
+    --background-color: #fff;
+    }
+
+body,
+.pagelist,
+.pagelistprevious,
+.pagelistfirst,
+.pagelistnumber,
+.pagelist li,
+.pagelistnext,
+#footer,
+#footermenu,
+#footerlocation,
+.chat-box-container,
+.chat-box,
+.chat-header,
+.chat-messages,
+.default-message,
+.search-animation,
+#animation-text {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pagelistprevious::before,
+.pagelistnext::before {
+    color: var(--primary-color);
+}
+
+.pagelistprevious::after,
+.pagelistnumber::before,
+.pagelistnumber::after,
+.pagelistfirst::before,
+.pagelistfirst::after,
+.pagelistnext::after {
+    background-color: var(--primary-color);
+}
+
+#footermenu li {
+    padding-right: 30px;
+}
+
+#footerlocation p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --primary-color: #03a9f4;
+    --background-color: #333;
+    --text-color: #fff;
+}
+
+body.dark-mode,
+.pagelist,
+.pagelistprevious,
+.pagelistfirst,
+.pagelistnumber,
+.pagelist li,
+.pagelistnext,
+#footer,
+#footermenu,
+#footerlocation,
+.chat-box-container,
+.chat-box,
+.chat-header,
+.chat-messages,
+.default-message,
+.search-animation,
+#animation-text {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pagelistprevious::before,
+.pagelistnext::before {
+    color: var(--primary-color);
+}
+
+.pagelistprevious::after,
+.pagelistnumber::before,
+.pagelistnumber::after,
+.pagelistfirst::before,
+.pagelistfirst::after,
+.pagelistnext::after {
+    background-color: var(--primary-color);
+}
+
+#footermenu li {
+    padding-right: 30px;
+}
+
+#footerlocation p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1000px) {
+    #searchresultsarea {
+        margin-left: 20px; /* Adjust margin for smaller screens */
+    }
+
+    #optionsmenu1,
+    #optionsmenu2 {
+        margin-left: 20px; /* Adjust margin for smaller screens */
+    }
+
+    .chat-box-container {
+        width: 90%; /* Adjust width for smaller screens */
+        right: 5%; /* Adjust position for smaller screens */
+    }
+}

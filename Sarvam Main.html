@@ -13,20 +13,25 @@
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Sarvam Search" oninput="showSuggestions()">
                 <div class="search-icons">
-                    <div class="icon" id="searchIcon"></div>
+                    <div class="icon" id="searchIcon" onclick="redirect()"></div>
                     <div class="icon" id="micIcon" onclick="startVoiceInput()"></div>
                 </div>
             </div>
             <ul id="suggestionList"></ul>
         </div>
-        <button onclick="performSearch()">Sarvam Search</button>
-        <button onclick="luckySearch()">Toofani</button>
+        <button onclick="redirect()">Sarvam Search</button>
+        <a href="sarvam ai.html"><button onclick="aisearch()">Sarvam AI</button></a>
         <div class="trending-topics">
     <h2>Trending Topics</h2>
     <ul class="trending-topic-list">
-        <li class="trending-topic-item">Topic 1</li>
-        <li class="trending-topic-item">Topic 2</li>
-        <li class="trending-topic-item">Topic 3</li>
+        <li class="trending-topic-item">Covid-19 JN.1 Variant Cases</li>
+        <li class="trending-topic-item">IND vs SA Live</li>
+        <li class="trending-topic-item">Travis Head IPL 2024</li>
+        <li class="trending-topic-item">Fighter Movie Teaser</li>
+        <li class="trending-topic-item">Ram Mandir Ayodhya</li>
+        <li class="trending-topic-item">SBI Amrit Kalash FD</li>
+        <li class="trending-topic-item">Mai Whelan Squid Game</li>
+        <li class="trending-topic-item">Gambhir Sreesanth Fight</li>
         <!-- Add more topics as needed -->
     </ul>
 </div>
@@ -35,15 +40,13 @@
                 <div class="language-logo"><font size=6px>🌐</font></div>
                 <div class="language-dropdown" id="languageDropdown">
                     <ul>
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">Hindi</a></li>
-                        <li><a href="#">Punjabi</a></li>
-                        <li><a href="#">Marathi</a></li>
-                        <li><a href="#">Tamil</a></li>
-                        <li><a href="#">Malayalam</a></li>
-                        <li><a href="#">Telugu</a></li>
-                        <li><a href="#">Manipuri</a></li>
-                        <li><a href="#">Bengali</a></li>
+                        <li><a href="#">हिन्दी</a></li>
+                        <li><a href="#">ਪੰਜਾਬੀ</a></li>
+                        <li><a href="#">मराठी</a></li>
+                        <li><a href="#"> தமிழ்</a></li>
+                        <li><a href="#">മലയാളം</a></li>
+                        <li><a href="#">తెలుగు</a></li>
+                        <li><a href="#">বাংলা</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,11 +54,11 @@
             <input type="checkbox" id="toggleModeSwitch">
             <label for="toggleModeSwitch" id="toggleModeLabel"></label>
              <div class="account-menu">
-    <img src="assests/profile.jpeg" alt="Profile Picture" class="profile-picture">
+    <img src="assests/profile.jpeg" alt="Profile Picture" class="profile-picture" onclick="toggleProfileSettings()">
     <div class="account-info">
         <span class="account-name">Sankalp Jain</span>
-        </div>
-    <div class="account-options">
+    </div>
+    <div class="account-options" id="profileSettings">
         <li><span class="account-name">sankalp001jain@yahoo.com</span></li>
         <li>My Profile</li>
         <li>Settings</li>
@@ -82,6 +85,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="script.js"></script>
-
+<script type="text/javascript" src="redirect.js"></script>
+<script type="text/javascript" src="ai.js"></script>
 </body>
 </html>

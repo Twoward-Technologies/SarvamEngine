@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>How to do engineering online - Sarvam Search</title>
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <div id="header">
+        <div id="topbar">
+           <a href="sarvam main.html"><h1>Sarvam</h1></a>
+            <div id="searchbar">
+                <input id="searchInput" type="text" value="" oninput="showSuggestions()">
+                <ul id="suggestionList"></ul>
+                <button id="searchbarmic" aria-label="search using voice">
+                    <img src="assests/mic.png" />
+                </button>
+                <button id="searchbarbutton" aria-label="search" onclick="redirect()">
+                    <img src="assests/search.png" onclick="redirect()">
+                </button>
+            </div>
+            <div class="toggle-container">
+                <div class="language-container">
+                <div class="language-logo"><font size=6px>🌐</font></div>
+                <div class="language-dropdown" id="languageDropdown">
+                    <ul>
+                        <li><a href="#">हिन्दी</a></li>
+                        <li><a href="#">ਪੰਜਾਬੀ</a></li>
+                        <li><a href="#">मराठी</a></li>
+                        <li><a href="#"> தமிழ்</a></li>
+                        <li><a href="#">മലയാളം</a></li>
+                        <li><a href="#">తెలుగు</a></li>
+                        <li><a href="#">বাংলা</a></li>
+                    </ul>
+                </div>
+            </div>
+            <input type="checkbox" id="toggleModeSwitch">
+            <label for="toggleModeSwitch" id="toggleModeLabel"></label>
+            </div>
+            <div class="account-menu">
+    <img src="assests/profile.jpeg" alt="Profile Picture" class="profile-picture">
+    <div class="account-info">
+        <span class="account-name">Sankalp Jain</span>
+        </div>
+    <div class="account-options">
+        <li><span class="account-name">sankalp001jain@yahoo.com</span></li>
+        <li>My Profile</li>
+        <li>Settings</li>
+        <li>Help</li>
+        <li>Sign Out</li>
+    </div>
+</div>
+
+        </div>
+        <div id="optionsbar">
+            <ul id="optionsmenu1">
+                <li><b>All</b></li>
+                <li>News</li>
+                <li>Videos</li>
+                <li>Images</li>
+                <li>Maps</li>
+                <li>More</li>
+            </ul>
+
+            <ul id="optionsmenu2">
+                <li>Settings</li>
+                <li>Tools</li>
+            </ul>
+        </div>
+    </div>
+    <div id="searchresultsarea">
+    <p id="searchresultsnumber">About 1,200,000 results (1.5 seconds)</p>
+    <div class="searchresult">
+    <div class="image-container">
+    <!-- Sample image item -->
+    <div class="image-item">
+        <img src="assests\1 (1).jpg" alt="Image 1">
+        <p class="para"> Hello image</p>
+    </div>
+
+    <div class="image-item">
+        <img src="assests\1 (1).png" alt="Image 1">
+        <p class="para"> Hello image</p>
+    </div>
+
+    <div class="image-item">
+        <img src="assests\1 (2).jpg" alt="Image 1">
+        <p class="para"> Hello image</p>
+    </div>
+
+    <div class="image-item">
+        <img src="assests\1 (2).png" alt="Image 1">
+        <p class="para"> Hello image</p>
+    </div>
+
+    <div class="image-item">
+        <img src="assests\1 (3).jpg" alt="Image 1">
+        <p class="para"> Hello image</p>
+    </div>
+
+    <div class="image-item">
+        <img src="assests\1 (3).png" alt="Image 1">
+        <p class="para"> Hello image</p>
+    </div>
+    <!-- Add more image items as needed -->
+</div>
+</div>
+
+    <div class="searchresult">
+        <h2>Online Engineering Degrees - Your Guide</h2>
+        <a>https://www.onlineengineeringdegrees.com</a> <button>▼</button>
+        <p id="textweb">Explore comprehensive information on pursuing engineering degrees online. Find accredited programs, admission requirements, and tips for successful online learning.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Benefits of Online Engineering Courses</h2>
+        <a>https://www.engineeringonlinebenefits.com</a> <button>▼</button>
+        <p id="textweb">Discover the advantages of taking engineering courses online. Learn about flexibility, cost savings, and how online platforms provide interactive learning experiences.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Top Online Platforms for Engineering Students</h2>
+        <a>https://www.engineeringplatformreviews.com</a> <button>▼</button>
+        <p id="textweb">Find reviews and recommendations for online platforms catering to engineering students. Compare features, course offerings, and user experiences for informed choices.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>How to Succeed in Online Engineering Programs</h2>
+        <a>https://www.engineeringsuccessstrategies.com</a> <button>▼</button>
+        <p id="textweb">Get practical tips and strategies for success in online engineering programs. From time management to effective communication, enhance your online learning experience.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Online Engineering Degrees vs. Traditional Programs</h2>
+        <a>https://www.engineeringcomparison.com</a> <button>▼</button>
+        <p id="textweb">Compare the pros and cons of online engineering degrees with traditional programs. Understand the differences and choose the educational path that suits your goals.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Engineering Specializations Available Online</h2>
+        <a>https://www.onlineengineeringmajors.com</a> <button>▼</button>
+        <p id="textweb">Explore a variety of engineering specializations available through online programs. Find the right major to match your interests and career aspirations.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Online Engineering Community Forums</h2>
+        <a>https://www.engineeringforumconnect.com</a> <button>▼</button>
+        <p id="textweb">Join online forums where engineering students and professionals discuss topics, share experiences, and provide support. Connect with a community passionate about engineering.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Financial Aid for Online Engineering Students</h2>
+        <a>https://www.engineeringfinancialaid.com</a> <button>▼</button>
+        <p id="textweb">Explore available financial aid options for online engineering students. Learn about scholarships, grants, and other resources to make your education more affordable.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Success Stories of Online Engineering Graduates</h2>
+        <a>https://www.engineeringsuccessstories.com</a> <button>▼</button>
+        <p id="textweb">Read inspiring success stories of individuals who pursued engineering degrees online and achieved career success. Learn from their experiences and accomplishments.</p>
+    </div>
+
+    <div class="searchresult">
+        <h2>Online Engineering Courses for Continuing Education</h2>
+        <a>https://www.engineeringcontinuinged.com</a> <button>▼</button>
+        <p id="textweb">Discover online engineering courses designed for professionals seeking continuing education. Stay updated on the latest industry trends and expand your skill set.</p>
+    </div>
+
+    <div class="searchresult">
+    <h2>Interactive Online Labs for Engineering Students</h2>
+    <a>https://www.enginelabexperience.com</a> <button>▼</button>
+    <p id="textweb">Engage in hands-on learning with interactive online labs designed for engineering students. Explore virtual experiments and simulations to enhance your practical skills.</p>
+</div>
+
+<div class="searchresult">
+    <h2>Online Engineering Mentorship Programs</h2>
+    <a>https://www.engineeringmentorsconnect.com</a> <button>▼</button>
+    <p id="textweb">Connect with experienced mentors through online programs offering guidance to aspiring engineers. Benefit from personalized advice and insights to navigate your educational journey.</p>
+</div>
+
+<div class="searchresult">
+    <h2>Top Online Platforms for Coding and Engineering Software</h2>
+    <a>https://www.engineeringcodingsolutions.com</a> <button>▼</button>
+    <p id="textweb">Discover the best online platforms for learning coding and engineering software. Explore tutorials and resources to master essential programming skills for engineers.</p>
+</div>
+
+<div class="searchresult">
+    <h2>Online Engineering Internship Opportunities</h2>
+    <a>https://www.engineeringinternships.com</a> <button>▼</button>
+    <p id="textweb">Explore virtual internship opportunities for engineering students. Gain real-world experience, work on projects, and build a strong foundation for your future engineering career.</p>
+</div>
+
+<div class="searchresult">
+    <h2>Online Engineering Degree Accreditation Guide</h2>
+    <a>https://www.engineeringaccreditationguide.com</a> <button>▼</button>
+    <p id="textweb">Navigate the accreditation process for online engineering degrees. Learn about recognized accrediting bodies and ensure the legitimacy of the programs you choose.</p>
+</div>
+
+    <div class="relatedsearches">
+        <h3>Searches related to how to do engineering online</h3>
+        <div class="relatedlists">
+            <ul class="relatedleft">
+                <li>online engineering degree programs</li>
+                <li>best platforms for engineering students</li>
+                <li>online engineering forums</li>
+                <li>financial aid for online engineering</li>
+            </ul>
+            <ul class="relatedright">
+                <li>online engineering success tips</li>
+                <li>engineering specializations online</li>
+                <li>online engineering continuing education</li>
+                <li>engineering degree vs. traditional</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="pagebar">
+            <ul class="pagelist">
+                <li class="pagelistprevious">Previous</li>
+                <li class="pagelistfirst">1</li>
+                <li class="pagelistnumber">2</li>
+                <li class="pagelistnumber">3</li>
+                <li class="pagelistnumber">4</li>
+                <li class="pagelistnumber">5</li>
+                <li class="pagelistnumber">6</li>
+                <li class="pagelistnumber">7</li>
+                <li class="pagelistnumber">8</li>
+                <li class="pagelistnumber">9</li>
+                <li class="pagelistnumber">10</li>
+                <li class="pagelistnext">Next</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="chat-box-container">
+    <div class="chat-box">
+        <div class="chat-header">
+            <h2>Sarvam Engine AI</h2>
+        </div>
+        <div class="chat-messages">
+            <div class="search-animation">
+                <p id="animation-text">
+                    Online engineering education offers flexibility and accessibility for individuals seeking to pursue engineering degrees or enhance their skills. Many accredited universities and institutions provide online engineering programs, allowing students to access lectures, coursework, and resources remotely. Through virtual classrooms and collaborative online platforms, students can engage with professors, participate in discussions, and submit assignments. Online engineering programs often incorporate interactive simulations and practical projects to ensure hands-on learning experiences. Additionally, students can tailor their study schedules to accommodate work or personal commitments, making it a convenient option for those who may not have the flexibility to attend traditional on-campus classes. As technology continues to advance, online engineering education is becoming increasingly sophisticated, providing a comprehensive and immersive learning environment for aspiring engineers worldwide.
+
+                    To pursue engineering online, individuals typically begin by researching accredited online engineering programs offered by reputable institutions. The application process often involves submitting transcripts, letters of recommendation, and a personal statement. Once admitted, students gain access to virtual classrooms where they can attend lectures, engage in discussions, and collaborate with peers on projects. Online engineering programs cover various disciplines, including civil, mechanical, electrical, and computer engineering, offering a range of specializations to suit different career goals. As students progress through the curriculum, they may also have the opportunity to participate in virtual labs and internships, gaining practical experience in their chosen field. The flexibility of online engineering education allows individuals to earn their degrees while balancing other commitments, making it a viable option for those seeking a more accessible and adaptable approach to pursuing an engineering education.
+                </p>
+                  </div>
+            </div>
+                        <div class="chat-input-container">
+            <div class="chat-input">
+                <input type="text" placeholder="Message Sarvam" class="sarvam-input"><button class="send-button">Send</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footerlocation">
+            <p>Somewhere, Moon </p>
+            <p> - From your phone (Location History) - Use precise location - Learn more</p>
+        </div>
+
+        <ul id="footermenu">
+            <li>Help</li>
+            <li>Send feedback</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+        </ul>
+    </div>
+
+    <script>
+        
+const suggestions = [
+    "Suggestion 1",
+    "Suggestion 2",
+    "Suggestion 3",
+    "Suggestion 4",
+    "How to",
+    "What is",
+    "Why",
+    "Where",
+    "When",
+    // Add the remaining suggestions here
+];
+
+// Declare the animationInterval variable outside the function
+let animationInterval;
+
+function showSuggestions() {
+    const input = document.getElementById('searchbartext');
+    const suggestionList = document.getElementById('suggestionList');
+    const inputValue = input.value.toLowerCase();
+
+    suggestionList.innerHTML = '';
+
+    const matchingSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(inputValue));
+    matchingSuggestions.forEach(suggestion => {
+        const listItem = document.createElement('li');
+        listItem.textContent = suggestion;
+        listItem.addEventListener('click', () => {
+            input.value = suggestion;
+            suggestionList.style.display = 'none';
+        });
+        suggestionList.appendChild(listItem);
+    });
+
+    if (inputValue.length > 0 && matchingSuggestions.length > 0) {
+        suggestionList.style.display = 'block';
+    } else {
+        suggestionList.style.display = 'none';
+    }
+}
+
+document.addEventListener('click', (event) => {
+    const suggestionList = document.getElementById('suggestionList');
+    if (event.target !== document.getElementById('searchbartext') && event.target !== suggestionList) {
+        suggestionList.style.display = 'none';
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const typingContainerElement = document.getElementById("typing-container");
+    const typingTextElement = document.getElementById("typing-animation-text");
+    typingContainerElement.classList.add("typing-animation-container");
+    typingTextElement.classList.add("typing-animation");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const animationTextElement = document.getElementById("animation-text");
+    const originalText = animationTextElement.textContent.trim();
+    const letters = originalText.split("");
+
+    let currentLetterIndex = 0;
+
+    function updateAnimationText() {
+        const animatedText = letters
+            .slice(0, currentLetterIndex)
+            .join("");
+        animationTextElement.textContent = animatedText;
+
+        if (currentLetterIndex < letters.length) {
+            currentLetterIndex++;
+        } else {
+            clearInterval(animationInterval); // Stop the animation
+        }
+    }
+
+    function startAnimation() {
+        animationInterval = setInterval(updateAnimationText, 10); // Adjust the interval as needed
+    }
+
+    startAnimation();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleModeSwitch = document.getElementById("toggleModeSwitch");
+    const body = document.body;
+
+    // Function to set theme based on system default
+    function setThemeBySystemDefault() {
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const systemDefaultTheme = prefersDarkMode ? 'dark' : 'light';
+        setTheme(systemDefaultTheme);
+        toggleModeSwitch.checked = prefersDarkMode;
+    }
+
+    toggleModeSwitch.addEventListener("change", function () {
+        const newTheme = toggleModeSwitch.checked ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+
+    setThemeBySystemDefault();
+
+    function setTheme(theme) {
+        body.classList.remove('light-mode', 'dark-mode');
+        body.classList.add(theme + '-mode');
+        localStorage.setItem('theme', theme);
+
+        var toggleModeLabel = document.getElementById('toggleModeLabel');
+        toggleModeLabel.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
+    }
+
+    function sendMessage() {
+        // Get the message from the input field
+        var messageInput = document.querySelector('.chat-input');
+        var message = messageInput.value;
+
+        // Append the message to the chat messages container
+        var chatMessages = document.querySelector('.chat-messages');
+        var newMessage = document.createElement('div');
+        newMessage.textContent = message;
+        chatMessages.appendChild(newMessage);
+
+        // Clear the input field
+        messageInput.value = '';
+    }
+});
+
+    </script>
+    <script src="script.js"></script>
+    <script src="redirect.js"></script>
+</body>
+
+</html>

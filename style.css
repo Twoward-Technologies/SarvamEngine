@@ -7,6 +7,49 @@ body {
     background-image: linear-gradient(-45deg, #292929, #121212);
     background-attachment: fixed;
 }
+:root {
+  --scrollbar-thumb-color: #3498db;
+  --scrollbar-track-color: #f1f1f1;
+}
+
+body.light-mode {
+  --scrollbar-thumb-color: #888888; /* Light mode thumb color */
+  --scrollbar-track-color: #f1f1f1; /* Light mode track color */
+}
+
+body.dark-mode {
+  --scrollbar-thumb-color: #ffffff; /* Dark mode thumb color */
+  --scrollbar-track-color: #333333; /* Dark mode track color */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+/* For Firefox */
+scrollbar {
+  width: 10px;
+}
+
+scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 5px;
+}
+
+scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
 .intro-animation {
     position: fixed;
     top: 0;
@@ -117,7 +160,7 @@ body {
 
 h1 {
     margin-top: 10px;
-    font-size: 4em;
+    font-size: 5em;
     margin-bottom: 20px;
     display: inline-block;
     text-transform: uppercase;
@@ -217,7 +260,6 @@ h1 {
 .language-dropdown li {
     padding: 14px;
     cursor: pointer;
-    border-bottom: 1px solid #ddd;
     transition: background-color 0.3s;
 }
 
@@ -249,15 +291,17 @@ h1 {
     background-image: linear-gradient(
         to right,
         #ff9933 0%,
-        #ff9933 33.33%,
-        #fff 33.33%,
-        #fff 66.66%,
-        #138808 66.66%,
+        #ffcc66 15%,
+        #ffcc66 30%,
+        #fff 45%,
+        #fff 60%,
+        #138808 75%,
         #138808 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 
 .dark-mode h1 {
     background-image: linear-gradient(
@@ -352,6 +396,7 @@ h1 {
 
 .search-container {
     position: relative;
+    padding: 20px;
 }
 
 #suggestionList {
@@ -360,39 +405,45 @@ h1 {
     margin: 0;
     position: absolute;
     border-radius: 30px;
-    width: 100%; /* Set the width to 100% */
-    max-width: 1000px; /* Set a maximum width if needed */
-    background-color: #fff; /* Adjust as needed */
+    width: 95%;
+    max-width: 900px;
+    background-color: #333; /* Match the search bar background color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     left: 50%;
     transform: translateX(-50%);
     display: none;
-    z-index: 2; /* Ensure it's above other elements */
+    z-index: 2;
 }
 
 #suggestionList li {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
     cursor: pointer;
+    border-radius: 30px;
     transition: background-color 0.3s;
 }
 
 #suggestionList li:hover {
-    background-color: #f4f4f4;
+    background-color: #555; /* Adjust as needed */
+}
+
+.dark-mode #suggestionList li:hover {
+    background-color: #a9a9a9;
+    border-radius: 30px;
 }
 
 .light-mode #suggestionList {
-    background-color: #eee; /* Adjust as needed for light mode */
+    background-color: #eee;
     color: #333;
 }
 
 .dark-mode #suggestionList {
-    background-color: #333; /* Adjust as needed for dark mode */
+    background-color: #333;
     color: #fff;
 }
 
-#searchInput:hover + #suggestionList {
-    display: block;
+#searchInput:focus + #suggestionList,
+#suggestionList:hover {
+    display: flex; /* Make the suggestion list visible when either the input or the list is hovered */
 }
 .dark-mode button{
     background-color: #5A5A5A;
@@ -406,7 +457,10 @@ button {
     padding: 10px 25px;
     background-color: #4285f4;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    font-size: 14.5px;
     border: none;
     cursor: pointer;
     transition: filter 0.3s, transform 0.3s;    
@@ -423,7 +477,7 @@ button:hover {
     display: flex;
     align-items: center;
     background-color: #333;
-    border-radius: 20px;
+    border-radius: 40px;
     padding: 10px;
     transition: background-color 0.3s;
 }
@@ -437,6 +491,9 @@ button:hover {
     border: none;
     background-color: transparent;
     color: #fff;
+    border-radius: 30px;
+    font-size: 1.2em;
+    height: 35px;
     outline: none;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -489,8 +546,8 @@ button:hover {
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin: 0 5px;
     cursor: pointer;
     border-radius: 20px;
@@ -645,7 +702,7 @@ footer {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
 
     .language-logo {
@@ -698,7 +755,7 @@ footer {
         margin-top: 40px; /* Add some spacing from the content */
         border-radius: 40px;
         width: 80%;
-        margin-left: -25px;
+        margin-left: 15px;
     }
 
     /* Adjust the styles for 480px width */
@@ -727,15 +784,15 @@ footer {
 
     /* Adjust footer styles for 480px width */
     footer {
-        padding: 15px;
+        padding: 10px;
     }
 
     .footer-level-1 img {
-        width: 16px;
+        width: 20px;
     }
 
     .footer-level-2 a {
-        font-size: 12px;
-        margin: 0 8px;
+        font-size: 9px;
+        margin: 0 6px;
     }
 }
