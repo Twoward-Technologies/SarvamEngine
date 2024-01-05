@@ -125,15 +125,18 @@ scrollbar-track {
 .account-options li:hover {
     background-color: #f4f4f4;
 }
+.dark-mode .account-options li:hover {
+    background-color: #444444;
+}
 
 /* Light Mode Styles */
 .light-mode .account-menu {
-    background-color: #4285f4;
+    background-color: #999ea3;
     color: #fff;
 }
 
 .light-mode .account-menu:hover {
-    background-color: #3367d6;
+    background-color: #b2b6bf;
 }
 
 .light-mode li{
@@ -450,7 +453,7 @@ h1 {
     transition: 0.3s;
 }
 .light-mode button{
-    background-color: #4285f4;
+    background-color: #999ea3;
 }
 button {
     margin-top: 20px;
@@ -470,7 +473,7 @@ button {
     background-color: #818589;
 }
 button:hover {
-    background-color: #3367d6;
+    background-color: #b2b6bf;
 }
 
 .search-bar {
