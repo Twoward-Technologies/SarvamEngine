@@ -79,12 +79,12 @@ body {
 }
 
 body.light-mode {
-  --scrollbar-thumb-color: #888888; /* Light mode thumb color */
-  --scrollbar-track-color: #f1f1f1; /* Light mode track color */
+  --scrollbar-thumb-color: #f1f1f1; /* Light mode thumb color */
+  --scrollbar-track-color: #ffffff; /* Light mode track color */
 }
 
 body.dark-mode {
-  --scrollbar-thumb-color: #ffffff; /* Dark mode thumb color */
+  --scrollbar-thumb-color: #222222; /* Dark mode thumb color */
   --scrollbar-track-color: #333333; /* Dark mode track color */
 }
 
