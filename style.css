@@ -772,7 +772,7 @@ footer {
 @media screen and (max-width: 480px) {
   .trending-topics {
     display: block; /* Show on smaller screens */
-    margin-top: 40px; /* Add some spacing from the content */
+    margin-top: -30px; /* Add some spacing from the content */
     border-radius: 40px;
     width: 80%;
     margin-left: 15px;
@@ -814,8 +814,7 @@ footer {
   background-color: var(--trending-item-hover-bg-light); /* Use CSS variable */
 }
 button {
-    width: 120px;
-    padding: 10px 30px;
+    visibility: hidden;
 }
 
     /* Adjust footer styles for 480px width */
