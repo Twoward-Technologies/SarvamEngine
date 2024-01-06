@@ -49,6 +49,49 @@ function setTheme(theme) {
     var toggleModeLabel = document.getElementById('toggleModeLabel');
     toggleModeLabel.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
 }
+if (window.innerWidth <= 600) {
+        // Create mobile footer
+        createMobileFooter();
+    }
+function createMobileFooter() {
+        // Create a new footer element
+        var mobileFooter = document.createElement('footer');
+        mobileFooter.id = 'mobileFooter';
+
+        // Create three buttons for the footer
+        var chatButton = createFooterButton('Chat', 'sarvam-ai.html');
+        var searchButton = createFooterButton('Search', '#', true); // Set the second button as active
+        var menuButton = createFooterButton('Menu', '#');
+
+        // Append buttons to the mobile footer
+        mobileFooter.appendChild(chatButton);
+        mobileFooter.appendChild(searchButton);
+        mobileFooter.appendChild(menuButton);
+
+        // Append the mobile footer to the body
+        document.body.appendChild(mobileFooter);
+    }
+
+    function createFooterButton(text, link, isActive = false) {
+        // Create a button element
+        var button = document.createElement('button');
+
+        // Set button text
+        button.textContent = text;
+
+        // Set button link
+        button.onclick = function () {
+            window.location.href = link;
+        };
+
+        // Set button class based on isActive
+        button.className = isActive ? 'active' : '';
+
+        return button;
+    }
+
+
+
 
 function showSuggestions() {
     var input = document.getElementById('searchInput');
@@ -386,5 +429,31 @@ const suggestions = [
         const suggestionList = document.getElementById('suggestionList');
         if (event.target !== document.getElementById('searchInput') && event.target !== suggestionList) {
             suggestionList.style.display = 'none';
+        }
+
+        function openPage(page) {
+            // Handle opening the specified page
+            window.location.href = page;
+        }
+
+        function highlightButton(buttonId) {
+            // Remove 'active' class from all buttons
+            const buttons = document.querySelectorAll('.footer-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            document.getElementById(buttonId).classList.add('active');
+        }
+
+        function openMenu() {
+            // Handle opening the menu
+            // Add your menu functionality here
+        }
+
+        // Check for dark mode and adjust styles accordingly
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Dark mode styles
+            document.querySelector('.mobile-footer').style.backgroundColor = '#2c3e50'; // Dark mode background color
+            // Add more styles for dark mode if needed
         }
     });

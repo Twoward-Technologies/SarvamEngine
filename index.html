@@ -69,7 +69,23 @@
         </div>
 
     </div>
-    <footer>
+    <div class="mobile-footer-container">
+        <footer class="mobile-footer light-mode"> <!-- Default to light mode -->
+            <div id="chatButton" class="footer-button" onclick="openPage('sarvam ai.html')">
+                <div>&#128172;</div>
+                <div>Chat</div>
+            </div>
+            <div id="searchButton" class="footer-button active" onclick="highlightButton('searchButton')">
+                <div>&#128269;</div>
+                <div>Search</div>
+            </div>
+            <div id="menuButton" class="footer-button" onclick="openMenu()">
+                <div>&#9776;</div>
+                <div>Menu</div>
+            </div>
+        </footer>
+    </div>
+    <footer class="main">
         <div class="footer-level-1">
             Made In Bharat <img src="assests/indianflag.png" alt="Indian Flag">
         </div>

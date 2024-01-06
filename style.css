@@ -610,7 +610,7 @@ button:hover {
     }
 }
 /* Footer Styles */
-footer {
+.main {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -651,7 +651,7 @@ footer {
     color: #4285f4;
 }
 
-.light-mode footer {
+.light-mode .main {
     background-image: linear-gradient(-45deg, #f4f4f4, #A9A9A9); /* Adjust as needed for light mode */
     color: #333; 
 }
@@ -686,7 +686,7 @@ footer {
         height: 16px;
     }
 
-    footer {
+    .main {
         padding: 15px;
     }
 
@@ -731,7 +731,7 @@ footer {
         height: 14px;
     }
 
-    footer {
+    .main {
         padding: 10px;
     }
 
@@ -817,20 +817,23 @@ button {
 }
 
     /* Adjust footer styles for 480px width */
-    .light-mode footer {
+    .light-mode .main {
         padding: 10px;
+        visibility: hidden;
     }
 
     .light-mode .footer-level-1 img {
         width: 20px;
+        visibility: hidden;
     }
 
     .light-mode .footer-level-2 a {
         font-size: 9px;
         margin: 0 5px;
     }
-    .dark-mode footer {
+    .dark-mode .main {
         padding: 10px;
+        visibility: hidden;
     }
 
     .dark-mode .footer-level-1 img {
@@ -840,5 +843,64 @@ button {
     .dark-mode .footer-level-2 a {
         font-size: 9px;
         margin: 0 5px;
+    }
+}
+/* Default styles for mobile footer */
+.mobile-footer-container {
+    display: none; /* Initially hide on larger screens */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.mobile-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+    width: calc(33.33% - 10px); /* One-third of the footer size with spacing */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.active {
+    background-color: #3498db; /* Highlighted button color */
+    color: #fff; /* Text color for highlighted button */
+}
+
+/* Light Mode Styles for mobile footer */
+.light-mode .mobile-footer-container,
+.light-mode .mobile-footer {
+    background-color: #f1f1f1; /* Light mode background color */
+}
+
+.light-mode .footer-button {
+    color: #333; /* Light mode text color */
+}
+
+/* Dark Mode Styles for mobile footer */
+.dark-mode .mobile-footer-container,
+.dark-mode .mobile-footer {
+    background-color: #2c3e50; /* Dark mode background color */
+}
+
+.dark-mode .footer-button {
+    color: #fff; /* Dark mode text color */
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 480px) {
+    .mobile-footer-container {
+        display: block; /* Show on smaller screens */
     }
 }

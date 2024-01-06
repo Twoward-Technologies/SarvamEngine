@@ -249,14 +249,18 @@
 
                     To pursue engineering online, individuals typically begin by researching accredited online engineering programs offered by reputable institutions. The application process often involves submitting transcripts, letters of recommendation, and a personal statement. Once admitted, students gain access to virtual classrooms where they can attend lectures, engage in discussions, and collaborate with peers on projects. Online engineering programs cover various disciplines, including civil, mechanical, electrical, and computer engineering, offering a range of specializations to suit different career goals. As students progress through the curriculum, they may also have the opportunity to participate in virtual labs and internships, gaining practical experience in their chosen field. The flexibility of online engineering education allows individuals to earn their degrees while balancing other commitments, making it a viable option for those seeking a more accessible and adaptable approach to pursuing an engineering education.
                 </p>
-                  </div>
             </div>
-                        <div class="chat-input-container">
+            <!-- Existing chat-container outside the search-animation div -->
+            <div class="chat-container"></div>
+        </div>
+        <div class="chat-input-container">
             <div class="chat-input">
-                <input type="text" placeholder="Message Sarvam" class="sarvam-input"><button class="send-button">Send</button></div>
+                <input type="text" id="chatInput" placeholder="Message Sarvam" class="sarvam-input">
+                <button class="send-button">Send</button>
             </div>
         </div>
     </div>
+</div>
 
     <div id="footer">
         <div id="footerlocation">
@@ -272,137 +276,9 @@
         </ul>
     </div>
 
-    <script>
-        
-const suggestions = [
-    "Suggestion 1",
-    "Suggestion 2",
-    "Suggestion 3",
-    "Suggestion 4",
-    "How to",
-    "What is",
-    "Why",
-    "Where",
-    "When",
-    // Add the remaining suggestions here
-];
-
-// Declare the animationInterval variable outside the function
-let animationInterval;
-
-function showSuggestions() {
-    const input = document.getElementById('searchbartext');
-    const suggestionList = document.getElementById('suggestionList');
-    const inputValue = input.value.toLowerCase();
-
-    suggestionList.innerHTML = '';
-
-    const matchingSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(inputValue));
-    matchingSuggestions.forEach(suggestion => {
-        const listItem = document.createElement('li');
-        listItem.textContent = suggestion;
-        listItem.addEventListener('click', () => {
-            input.value = suggestion;
-            suggestionList.style.display = 'none';
-        });
-        suggestionList.appendChild(listItem);
-    });
-
-    if (inputValue.length > 0 && matchingSuggestions.length > 0) {
-        suggestionList.style.display = 'block';
-    } else {
-        suggestionList.style.display = 'none';
-    }
-}
-
-document.addEventListener('click', (event) => {
-    const suggestionList = document.getElementById('suggestionList');
-    if (event.target !== document.getElementById('searchbartext') && event.target !== suggestionList) {
-        suggestionList.style.display = 'none';
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const typingContainerElement = document.getElementById("typing-container");
-    const typingTextElement = document.getElementById("typing-animation-text");
-    typingContainerElement.classList.add("typing-animation-container");
-    typingTextElement.classList.add("typing-animation");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const animationTextElement = document.getElementById("animation-text");
-    const originalText = animationTextElement.textContent.trim();
-    const letters = originalText.split("");
-
-    let currentLetterIndex = 0;
-
-    function updateAnimationText() {
-        const animatedText = letters
-            .slice(0, currentLetterIndex)
-            .join("");
-        animationTextElement.textContent = animatedText;
-
-        if (currentLetterIndex < letters.length) {
-            currentLetterIndex++;
-        } else {
-            clearInterval(animationInterval); // Stop the animation
-        }
-    }
-
-    function startAnimation() {
-        animationInterval = setInterval(updateAnimationText, 10); // Adjust the interval as needed
-    }
-
-    startAnimation();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const toggleModeSwitch = document.getElementById("toggleModeSwitch");
-    const body = document.body;
-
-    // Function to set theme based on system default
-    function setThemeBySystemDefault() {
-        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const systemDefaultTheme = prefersDarkMode ? 'dark' : 'light';
-        setTheme(systemDefaultTheme);
-        toggleModeSwitch.checked = prefersDarkMode;
-    }
-
-    toggleModeSwitch.addEventListener("change", function () {
-        const newTheme = toggleModeSwitch.checked ? 'dark' : 'light';
-        setTheme(newTheme);
-    });
-
-    setThemeBySystemDefault();
-
-    function setTheme(theme) {
-        body.classList.remove('light-mode', 'dark-mode');
-        body.classList.add(theme + '-mode');
-        localStorage.setItem('theme', theme);
-
-        var toggleModeLabel = document.getElementById('toggleModeLabel');
-        toggleModeLabel.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
-    }
-
-    function sendMessage() {
-        // Get the message from the input field
-        var messageInput = document.querySelector('.chat-input');
-        var message = messageInput.value;
-
-        // Append the message to the chat messages container
-        var chatMessages = document.querySelector('.chat-messages');
-        var newMessage = document.createElement('div');
-        newMessage.textContent = message;
-        chatMessages.appendChild(newMessage);
-
-        // Clear the input field
-        messageInput.value = '';
-    }
-});
-
-    </script>
-    <script src="script.js"></script>
+<script src="script.js"></script>
     <script src="redirect.js"></script>
+    <script type="text/javascript" src="searchai.js"></script>
 </body>
 
 </html>
