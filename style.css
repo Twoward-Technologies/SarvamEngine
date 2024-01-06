@@ -13,18 +13,18 @@ body {
 }
 
 body.light-mode {
-  --scrollbar-thumb-color: #888888; /* Light mode thumb color */
-  --scrollbar-track-color: #f1f1f1; /* Light mode track color */
+  --scrollbar-thumb-color: #f1f1f1; /* Light mode thumb color */
+  --scrollbar-track-color: #ffffff; /* Light mode track color */
 }
 
 body.dark-mode {
-  --scrollbar-thumb-color: #ffffff; /* Dark mode thumb color */
+  --scrollbar-thumb-color: #111111; /* Dark mode thumb color */
   --scrollbar-track-color: #333333; /* Dark mode track color */
 }
 
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -123,7 +123,7 @@ scrollbar-track {
 }
 
 .account-options li:hover {
-    background-color: #f4f4f4;
+        -color: #f4f4f4;
 }
 .dark-mode .account-options li:hover {
     background-color: #444444;
@@ -131,8 +131,8 @@ scrollbar-track {
 
 /* Light Mode Styles */
 .light-mode .account-menu {
-    background-color: #999ea3;
-    color: #fff;
+    background-color: #f4f4f4;
+    color: #383838;
 }
 
 .light-mode .account-menu:hover {
@@ -386,7 +386,7 @@ h1 {
 .light-mode {
     background-color: #fff;
     color: #181818;
-    background-image: linear-gradient(-45deg, #f4f4f4, #A9A9A9);
+    background-image: linear-gradient(-45deg, #fafbfc, #ffffff);
     background-attachment: fixed;
 }
 
@@ -453,7 +453,8 @@ h1 {
     transition: 0.3s;
 }
 .light-mode button{
-    background-color: #999ea3;
+    background-color: #f1f1f1;
+    color: black;
 }
 button {
     margin-top: 20px;
@@ -743,59 +744,103 @@ footer {
         margin: 0 6px;
     }
 }
+:root {
+  --trending-bg-light: #ffffff;
+  --trending-text-light: #222;
+  --trending-bg-dark: #333;
+  --trending-text-dark: #fff;
+  --trending-item-bg: #555;
+  --trending-item-hover-bg: #777;
+  --trending-item-bg-light: #f1f1f1;
+  --trending-item-hover-bg-light: #ffffff;
+}
+
 .trending-topics {
-    display: none; /* Initially hide on larger screens */
-    text-align: center;
-    padding: 20px;
-    background-color: #333; /* Adjust as needed */
-    color: #fff;
+  display: none; /* Initially hide on larger screens */
+  text-align: center;
+  padding: 20px;
+  background-color: var(--trending-bg-light); /* Use CSS variable */
+  color: var(--trending-text-light); /* Use CSS variable */
+}
+
+.dark-mode .trending-topics {
+  background-color: var(--trending-bg-dark); /* Use CSS variable */
+  color: var(--trending-text-dark); /* Use CSS variable */
 }
 
 /* Media Query for Mobile Devices */
 @media screen and (max-width: 480px) {
-    .trending-topics {
-        display: block; /* Show on smaller screens */
-        margin-top: 40px; /* Add some spacing from the content */
-        border-radius: 40px;
-        width: 80%;
-        margin-left: 15px;
-    }
+  .trending-topics {
+    display: block; /* Show on smaller screens */
+    margin-top: 40px; /* Add some spacing from the content */
+    border-radius: 40px;
+    width: 80%;
+    margin-left: 15px;
+  }
 
-    /* Adjust the styles for 480px width */
-    .trending-topics h2 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
+  /* Adjust the styles for 480px width */
+  .trending-topics h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
 
-    .trending-topic-list {
-        list-style-type: none;
-        padding: 0;
-    }
+  .trending-topic-list {
+    list-style-type: none;
+    padding: 0;
+  }
 
-    .trending-topic-item {
-        padding: 8px;
-        margin-bottom: 8px;
-        border-radius: 20px;
-        background-color: #555; /* Adjust as needed */
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+ .dark-mode .trending-topic-item {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  background-color: var(--trending-item-bg); /* Use CSS variable */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    .trending-topic-item:hover {
-        background-color: #777; /* Adjust as needed */
-    }
+.dark-mode .trending-topic-item:hover {
+  background-color: var(--trending-item-hover-bg); /* Use CSS variable */
+}
+.trending-topic-item {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  background-color: var(--trending-item-bg-light); /* Use CSS variable */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.trending-topic-item:hover {
+  background-color: var(--trending-item-hover-bg-light); /* Use CSS variable */
+}
+button {
+    width: 120px;
+    padding: 10px 30px;
+}
 
     /* Adjust footer styles for 480px width */
-    footer {
+    .light-mode footer {
         padding: 10px;
     }
 
-    .footer-level-1 img {
+    .light-mode .footer-level-1 img {
         width: 20px;
     }
 
-    .footer-level-2 a {
+    .light-mode .footer-level-2 a {
         font-size: 9px;
-        margin: 0 6px;
+        margin: 0 5px;
+    }
+    .dark-mode footer {
+        padding: 10px;
+    }
+
+    .dark-mode .footer-level-1 img {
+        width: 20px;
+    }
+
+    .dark-mode .footer-level-2 a {
+        font-size: 9px;
+        margin: 0 5px;
     }
 }
