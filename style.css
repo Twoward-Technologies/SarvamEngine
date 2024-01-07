@@ -921,6 +921,9 @@ button {
             width: 380px;
             margin-left: -20px;
         }
+        body{
+            overflow: hidden;
+        }
         #searchInput{
             font-size: 1.5em;
         }
@@ -934,6 +937,9 @@ button {
         .trending-topics{
             margin-top: -120px;
             margin-left: 12px;
+        }
+        body{
+            overflow: hidden;
         }
         .footer-button{
             font-size: 15px;
@@ -961,8 +967,6 @@ button {
     right: 0; /* Start with right set to 0 */
     width: 0; /* Start with width set to 0 */
     height: 100%;
-    background-color: #333;
-    color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transition: width 0.3s ease, right 0.3s ease; /* Update transition property */
@@ -972,6 +976,14 @@ button {
     justify-content: flex-start;
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+.dark-mode .sidebar{
+    background-color: #333;
+    color: #fff;
+}
+.light-mode .sidebar{
+    background-color: #fff;
+    color: #111;
+}
 
 .sidebar img {
     width: 100px;
@@ -979,10 +991,15 @@ button {
 }
 
 .sidebar a {
-    color: #fff;
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 16px;
+}
+.dark-mode .sidebar a{
+    color: #fff;
+}
+.light-mode .sidebar a{
+    color: #111;
 }
 
 .sidebar.expanded {
