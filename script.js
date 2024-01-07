@@ -423,6 +423,10 @@ const suggestions = [
             suggestionList.style.display = 'none';
         }
     }
+function openPage(page) {
+    // Handle opening the specified page
+    window.location.href = page;
+}
 
     // Close suggestion list when clicking outside the input and list
     document.addEventListener('click', (event) => {
@@ -450,10 +454,5 @@ const suggestions = [
             // Add your menu functionality here
         }
 
-        // Check for dark mode and adjust styles accordingly
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // Dark mode styles
-            document.querySelector('.mobile-footer').style.backgroundColor = '#2c3e50'; // Dark mode background color
-            // Add more styles for dark mode if needed
-        }
+        
     });

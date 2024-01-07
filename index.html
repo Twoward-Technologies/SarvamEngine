@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Sarvam</title>
 </head>
 <body>
@@ -70,17 +72,17 @@
 
     </div>
     <div class="mobile-footer-container">
-        <footer class="mobile-footer light-mode"> <!-- Default to light mode -->
+        <footer class="mobile-footer"> <!-- Default to light mode -->
             <div id="chatButton" class="footer-button" onclick="openPage('sarvam ai.html')">
-                <div>&#128172;</div>
+                <div id="new-chat-btn" class="material-symbols-rounded">chat</div>
                 <div>Chat</div>
             </div>
             <div id="searchButton" class="footer-button active" onclick="highlightButton('searchButton')">
-                <div>&#128269;</div>
+                <div class="material-symbols-outlined">search</div>
                 <div>Search</div>
             </div>
             <div id="menuButton" class="footer-button" onclick="openMenu()">
-                <div>&#9776;</div>
+                <div class="material-symbols-outlined">menu</div>
                 <div>Menu</div>
             </div>
         </footer>
