@@ -939,16 +939,17 @@ button {
         }
         .search-container{
             width: 310px;
-            margin-left: -20px;
+            margin-left: -22px;
         }
         #searchInput{
             font-size: 1.2em;
         }
 
         .icon {
-            margin-left: -12px;
-            width: 25px;
-            height: 25px;
+            padding: 3px;
+        }
+        #searchIcon{
+            margin-left: -25px;
         }
     }
 }
