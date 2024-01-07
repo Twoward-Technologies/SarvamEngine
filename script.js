@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     var searchInput = document.getElementById('searchInput');
     searchInput.focus();
@@ -448,11 +447,10 @@ function openPage(page) {
             // Add 'active' class to the clicked button
             document.getElementById(buttonId).classList.add('active');
         }
-
-        function openMenu() {
-            // Handle opening the menu
-            // Add your menu functionality here
-        }
-
-        
     });
+    function openMenu() {
+    var sidebar = document.getElementById("sidebar");
+
+    // Toggle class for sidebar to adjust its position
+    sidebar.classList.toggle("expanded");
+}

@@ -953,4 +953,49 @@ button {
             margin-left: -36px;
         }
     }
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; /* Start with right set to 0 */
+    width: 0; /* Start with width set to 0 */
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: width 0.3s ease, right 0.3s ease; /* Update transition property */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.sidebar img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.sidebar.expanded {
+    width: 60%; /* Set width to 60% when expanded */
+    right: 0;
+}
+
+/* Media query for screens with width between 360px and 500px */
+@media screen and (max-width: 500px) and (min-width: 360px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar:not(.expanded) {
+        width: 0; /* Set width to 0% when not expanded */
+        right: -250px;
+    }
 }
