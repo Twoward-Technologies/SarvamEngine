@@ -375,8 +375,8 @@ h1 {
 }
 
 .container {
-    max-width: 900px;
-    margin: 80px auto;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 90px;
     border-radius: 100px;
     box-shadow: none;
@@ -507,7 +507,7 @@ button:hover {
     color: #333;
 }
 
-..search-bar:hover {
+.search-bar:hover {
     background-color: #555;
 }
 
@@ -775,7 +775,7 @@ button:hover {
     display: block; /* Show on smaller screens */
     margin-top: -50px; /* Add some spacing from the content */
     border-radius: 40px;
-    width: 80%;
+    width: 90%;
     margin-left: 15px;
   }
   /* Adjust the styles for 480px width */
@@ -790,9 +790,9 @@ button:hover {
   }
 
  .dark-mode .trending-topic-item {
-  padding: 8px;
+  padding: 14px;
   margin-bottom: 8px;
-  border-radius: 20px;
+  border-radius: 80px;
   background-color: var(--trending-item-bg); /* Use CSS variable */
   cursor: pointer;
   transition: background-color 0.3s;
@@ -802,9 +802,9 @@ button:hover {
   background-color: var(--trending-item-hover-bg); /* Use CSS variable */
 }
 .trending-topic-item {
-  padding: 8px;
+  padding: 14px;
   margin-bottom: 8px;
-  border-radius: 20px;
+  border-radius: 80px;
   background-color: var(--trending-item-bg-light); /* Use CSS variable */
   cursor: pointer;
   transition: background-color 0.3s;
@@ -936,7 +936,7 @@ button {
     @media screen and (max-width :360px) {
         .trending-topics{
             margin-top: -120px;
-            margin-left: 12px;
+            margin-left: 2px;
         }
         body{
             overflow: hidden;
