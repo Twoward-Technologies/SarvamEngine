@@ -7,7 +7,7 @@ const themeButton = document.querySelector("#theme-btn");
 const deleteButton = document.querySelector("#delete-btn");
 const conversationList = document.querySelector(".conversation-list");
 let userText = null;
-const API_KEY = "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"; // Paste your API key here
+const API_KEY = "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"; // Paste your API key here
 // Initialize a variable or array to store the inputs
 let aiSearchHistory = [];
 
@@ -182,11 +182,6 @@ window.addEventListener("load", () => {
 // Add an event listener to the sidebar to handle conversation clicks
 conversationList.addEventListener("click", handleConversationClick);
 
-function loadConversationsFromLocalStorage() {
-  const conversations = JSON.parse(localStorage.getItem("conversations")) || [];
-  conversationList.innerHTML = conversations.map((conv, index) => `<li data-index="${index}">${conv.title}</li>`).join("");
-}
-
 function saveConversationToLocalStorage(title, content) {
   const conversations = JSON.parse(localStorage.getItem("conversations")) || [];
   conversations.push({ title, content });
@@ -206,14 +201,6 @@ function handleConversationClick(e) {
 const newChatButton = document.getElementById("new-chat-btn");
 newChatButton.addEventListener("click", handleNewChat);
 
-function handleConversationClick(e) {
-  const index = e.target.getAttribute("data-index");
-  const conversations = JSON.parse(localStorage.getItem("conversations")) || [];
-  if (conversations[index]) {
-    renderChatContent(conversations[index].content);
-  }
-}
-
 function renderChatContent(content) {
   chatContainer.innerHTML = content;
   chatContainer.scrollTo(0, chatContainer.scrollHeight);
@@ -221,28 +208,6 @@ function renderChatContent(content) {
 
 // ...
 
-function handleNewChat() {
-  // Get the first input of the chat as the title
-  const firstInput = chatContainer.querySelector(".chat-container .chat.outgoing p");
-  const newChatTitle = firstInput ? firstInput.textContent : "New Chat";
-
-  // Save existing chat to past conversations
-  saveConversationToLocalStorage(newChatTitle, chatContainer.innerHTML);
-
-  // Clear the current chat
-  clearChatContent();
-
-  // Display the "SARVAM AI" section
-  const defaultText = `<div class="default-text">
-                            <h1>SARVAM AI</h1>
-                            <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
-                        </div>`;
-  chatContainer.innerHTML = defaultText;
-}
-
-function clearChatContent() {
-  chatContainer.innerHTML = "";
-}
 
 
 function handleNewChat() {
@@ -310,15 +275,3 @@ function truncateText(text, words) {
   return truncatedArray.join(' ') + (wordArray.length > words ? ' ...' : '');
 }
 
-function loadConversationsFromLocalStorage() {
-  const conversations = JSON.parse(localStorage.getItem("conversations")) || [];
-  conversationList.innerHTML = conversations.map((conv, index) => {
-    const truncatedTitle = truncateText(conv.title, 3); // Truncate to first 3 words
-    return `<li data-index="${index}">
-              <div class="conversation-item">
-                <div class="conversation-title">${truncatedTitle}</div>
-                <button class="delete-conversation-btn material-symbols-rounded">delete</button>
-              </div>
-            </li>`;
-  }).join("");
-}
