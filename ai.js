@@ -11,7 +11,7 @@ const API_KEY = "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"; // Paste 
 // Initialize a variable or array to store the inputs
 let aiSearchHistory = [];
 
-// Function to perform Sarvam AI search
+// Function to perform Sanyukt AI search
 function aisearch() {
     const inputElement = document.getElementById("searchInput");
     const userInput = inputElement.value.trim();
@@ -35,7 +35,7 @@ const loadDataFromLocalstorage = () => {
   document.body.classList.toggle("light-mode", themeColor === "light_mode");
   themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
   const defaultText = `<div class="default-text">
-                            <h1>SARVAM AI</h1>
+                            <h1>Sanyukt AI</h1>
                             <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
                         </div>`;
   chatContainer.innerHTML = localStorage.getItem("all-chats") || defaultText;
@@ -221,9 +221,9 @@ function handleNewChat() {
   // Clear the current chat
   chatContainer.innerHTML = "";
 
-  // Display the "SARVAM AI" section
+  // Display the "Sanyukt AI" section
   const defaultText = `<div class="default-text">
-                            <h1>SARVAM AI</h1>
+                            <h1>Sanyukt AI</h1>
                             <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
                         </div>`;
   chatContainer.innerHTML = defaultText;
